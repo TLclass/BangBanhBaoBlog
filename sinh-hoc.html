@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BangBanhBao | Sinh học </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <meta property="og:image" content="https://tlclass.github.io/BangBanhBaoBlog/img/Anh ChiBi.jpg" />
+  
+  
+  <style>
+    :root {
+      --primary: white;
+      --bg-light: #f9fafb;
+      --bg-white: #fff;
+      --text-color: #333;
+      --shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: var(--primary);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.2rem;
+      margin: 0;
+      color: blue;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      position: relative;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: blue;
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 6px 10px;
+      border-radius: 4px;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: rgba(0, 0, 255, 0.1);
+    }
+
+    /* Dropdown styles */
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background: var(--bg-white);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+      min-width: 180px;
+      flex-direction: column;
+      z-index: 999;
+    }
+
+    nav ul li:hover > ul {
+      display: flex;
+    }
+
+    nav ul li ul li a {
+      padding: 10px 16px;
+      color: #333;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: blue;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      z-index: 2000;
+      padding: 40px 20px;
+      box-shadow: var(--shadow);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .mobile-menu a {
+      font-size: 1.2rem;
+      color: blue;
+      text-decoration: none;
+    }
+
+    .mobile-menu .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: blue;
+    }
+
+    main {
+      padding: 40px 0;
+    }
+
+    .post {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+    }
+
+    .post-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    }
+
+    .post-meta {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 20px;
+    }
+
+    .post-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    }
+
+    .post-content h3 {
+    margin-top: 25px;
+    color: #005c3a;
+    }
+
+    .post-content ul {
+    padding-left: 20px;
+    }
+
+    .share-buttons {
+    margin-top: 30px;
+    }
+
+    .share-buttons p {
+    margin-bottom: 10px;
+    font-weight: bold;
+    }
+
+    .btn-share {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 1.4rem;
+    color: #333;
+    transition: color 0.3s ease;
+    }
+
+    .btn-share:hover {
+    color: green;
+    }
+
+
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--bg-white);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+    }
+
+    .card {
+    position: relative; /* Cần thiết để xác định vị trí tuyệt đối cho icon */
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    background-color: #fff;
+    }
+
+    .arrow-icon {
+    position: absolute;
+    bottom: 15px;  /* Cách từ đáy box 15px */
+    right: 15px;   /* Cách từ bên phải box 15px */
+    font-size: 30px; /* Kích thước lớn hơn một chút cho dễ nhìn */
+    color: #000;    /* Màu đen cho icon */
+    text-decoration: none; /* Xóa gạch chân */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    }
+
+    .arrow-icon:hover {
+    transform: translateX(5px);  /* Thêm hiệu ứng hover */
+    }
+
+    .arrow-icon i {
+    color: inherit;  /* Đảm bảo icon có màu đen */
+    }
+
+
+
+    footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .mobile-menu.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>BangBanhBao</h1>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li>
+            <a href="#">Danh mục ▾</a>
+            <ul>
+              <li><a href="#">Tin học</a></li>
+              <li><a href="#">Toán học</a></li>
+              <li><a href="#">Vật lí</a></li>
+              <li><a href="#">Hóa học</a></li>
+              <li><a href="sinh-hoc.html">Sinh học</a></li>
+              <li><a href="#">Lịch sử</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Bài viết</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenu" class="mobile-menu">
+    <button class="close-btn" onclick="toggleMenu()">✕</button>
+    <a href="index.html">Trang chủ</a>
+    <a href="index.html">Danh mục</a>
+    <a href="#">Bài viết</a>
+    <a href="#">Liên hệ</a>
+  </div>
+
+  <main class="container">
+
+    <section class="intro">
+        <img src="img/banner-sinh-hoc-02.jpg" alt="" style="width: 100%; border-radius: 7px; margin-top: 10px;">    
+    </section>
+
+    <section class="intro" style="margin-top: -20px;">
+      <h2>Sinh học</h2>
+      <p>Tài liệu & Bài Tập - Học về cơ thể sống, hệ sinh thái, cấu trúc tế bào, gen, và tiến hóa sinh học.(S10,11,12)</p>
+    </section>
+
+    <center><p class="post-meta">---Bài viết được ghim---</p></center>
+
+    <!--BAI VIET MA SO 004-->
+    <article class="post">
+        <h2 class="post-title">Vì sao nên học tốt môn Sinh học? Kiến thức cần nắm vững ở lớp 10, 11, 12 để thi tốt nghiệp</h2>
+        <p class="post-meta">Cập nhật: 04/05/2025 | Chủ đề: Định hướng học tập môn Sinh học</p>
+    
+        <div class="post-content">
+        <p>Sinh học là một trong những môn học quan trọng trong chương trình THPT, không chỉ giúp học sinh hiểu về thế giới sống mà còn là môn thi thuộc tổ hợp KHTN (Khoa học Tự nhiên) trong kỳ thi tốt nghiệp THPT. Dưới đây là những lý do bạn nên học tốt môn Sinh học và các nội dung trọng tâm theo từng lớp học.</p>
+    
+        <h3>🔍 Vì sao nên học tốt môn Sinh học?</h3>
+        <ul>
+            <li>👉 Hiểu rõ cơ thể người, cách các hệ cơ quan hoạt động và giữ gìn sức khỏe.</li>
+            <li>👉 Là nền tảng cho các ngành Y - Dược - Sinh học phân tử, Môi trường, Công nghệ Sinh học.</li>
+            <li>👉 Tăng khả năng tư duy logic, khả năng quan sát và phân tích dữ liệu.</li>
+            <li>👉 Là một trong ba môn xét tuyển khối B00 (Toán - Hóa - Sinh), mở rộng cơ hội đại học.</li>
+        </ul>
+    
+        <h3>📘 Kiến thức trọng tâm cần nắm ở các lớp:</h3>
+        <h4>🔹 Lớp 10 - Tế bào và sự sống</h4>
+        <ul>
+            <li>Các thành phần cấu tạo nên tế bào: màng sinh chất, ti thể, lưới nội chất...</li>
+            <li>Quá trình trao đổi chất và năng lượng (hô hấp tế bào, quang hợp).</li>
+            <li>Di truyền học cơ bản: ADN, ARN, cơ chế nhân đôi, phiên mã, dịch mã.</li>
+        </ul>
+    
+        <h4>🔹 Lớp 11 - Sinh lý học thực vật & động vật</h4>
+        <ul>
+            <li>Chức năng các cơ quan thực vật: rễ, lá, thân, quá trình quang hợp, thoát hơi nước.</li>
+            <li>Chức năng hệ thần kinh, nội tiết, tuần hoàn, tiêu hóa ở động vật và con người.</li>
+            <li>Các phản ứng cảm ứng và vận động ở sinh vật sống.</li>
+        </ul>
+    
+        <h4>🔹 Lớp 12 - Di truyền học & Tiến hóa</h4>
+        <ul>
+            <li>Các quy luật di truyền Mendel, tương tác gen, di truyền liên kết.</li>
+            <li>Biến dị, đột biến gen – nhiễm sắc thể, ứng dụng di truyền học trong chọn giống.</li>
+            <li>Tiến hóa, chọn lọc tự nhiên và nguồn gốc loài người.</li>
+        </ul>
+    
+        <h3>🎯 Lời khuyên:</h3>
+        <ul>
+            <li>✅ Luôn ghi chú và vẽ sơ đồ tư duy để dễ nhớ.</li>
+            <li>✅ Học lý thuyết kết hợp luyện tập trắc nghiệm thường xuyên.</li>
+            <li>✅ Dùng flashcards hoặc app học online để ôn tập hiệu quả hơn.</li>
+        </ul>
+    
+        <p>Hãy bắt đầu học Sinh học một cách nghiêm túc từ lớp 10 để xây nền vững chắc cho lớp 12 và đạt điểm cao trong kỳ thi tốt nghiệp và tuyển sinh đại học!</p>
+        </div>
+    
+        <div class="share-buttons">
+        <p>Chia sẻ bài viết:</p>
+        <a href="#" class="btn-share"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="btn-share"><i class="fab fa-twitter"></i></a>
+        </div>
+    </article>
+  
+    <!--BAI VIET MA SO 001-->
+
+    <article class="post">
+        <h2 class="post-title">TÀI LIỆU TỔNG HỢP MÔN SINH HỌC LỚP 11 </h2>
+        <p class="post-meta">Đăng ngày: 04/05/2025 | Chủ đề: Sinh học lớp 11</p>
+        
+        <li><a href="https://drive.google.com/file/d/1VmX7LXRcpp64OvuogQ3RIh01TbZwNxEZ/view?usp=sharing" target="_blank">PDF Tài liệu Sinh học 11 | Bài 18.TẬP TÍNH Ở ĐỘNG VẬT - Bài 20: SINH TRƯỞNG VÀ
+            PHÁT TRIỂN Ở THỰC VẬT - Bài 21: SINH TRƯỞNG VÀ
+            PHÁT TRIỂN Ở ĐỘNG VẬT</a></li>
+
+        <li><a href="https://drive.google.com/file/d/1cFrRiab_nyz4VvYP_r2GVfDSCekqYBL4/view?usp=sharing" target="_blank">PDF Tài liệu Sinh học 11 | Bài 8. DINH DƯỠNG & TIÊU HÓA Ở ĐỘNG VẬT (Cô Phượng THPT Thống Linh)</a></li>
+
+        <div class="share-buttons">
+          <p>Chia sẻ bài viết:</p>
+          <a href="#" class="btn-share"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="btn-share"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="btn-share"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </article>
+      <center><p class="post-meta">---Bài viết gần đây---</p></center>
+      <!--BAI VIET MA SO 002-->
+      <article class="post">
+        <h2 class="post-title">Tài liệu & Bài tập Sinh học 11 - BÀI 17: CẢM ỨNG Ở ĐỘNG VẬT</h2>
+        <p class="post-meta">Cập nhật: 04/05/2025 | Mức độ: Cơ bản đến nâng cao</p>
+      
+        <div class="post-content">
+          <p>Chào các bạn! Dưới đây là bộ tài liệu PDF và bài tập online giúp bạn ôn luyện kiến thức về "BÀI 17: CẢM ỨNG Ở ĐỘNG VẬT" trong chương trình Sinh học 11. Bạn có thể tải về hoặc quét mã QR để truy cập nhanh trên điện thoại.</p>
+      
+          <h3>📘 1. Tài liệu lý thuyết</h3>
+          <ul>
+            <li><a href="https://drive.google.com/file/d/1VmX7LXRcpp64OvuogQ3RIh01TbZwNxEZ/view?usp=sharing" target="_blank">Tải tài liệu PDF: B18,20,21 (đã có)</a></li>
+            <li><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/tai-lieu-te-bao.pdf&size=120x120" alt="QR Tài liệu PDF"></li>
+          </ul>
+      
+          <h3>📝 2. Bài tập trắc nghiệm</h3>
+          <p>Thực hành ngay với 21 câu hỏi trắc nghiệm online để kiểm tra mức độ hiểu bài:</p>
+          <ul>
+            <li><a href="https://azota.vn/de-thi/xj5rsz" target="_blank">Làm bài tại đây (đã có bài tập)</a></li>
+            <li><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/trac-nghiem-te-bao&size=120x120" alt="QR Bài tập trắc nghiệm"></li>
+          </ul>
+      
+          <h3>📊 3. Kết quả và gợi ý giải</h3>
+          <ul>
+            <li><a href="https://example.com/dap-an-te-bao" target="_blank">Xem đáp án & giải thích chi tiết (chưa update)</a></li>
+            <li><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/dap-an-te-bao&size=120x120" alt="QR Đáp án giải thích"></li>
+          </ul>
+        </div>
+      
+        <div class="share-buttons">
+          <p>Chia sẻ bài viết:</p>
+          <a href="#" class="btn-share"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="btn-share"><i class="fab fa-twitter"></i></a>
+        </div>
+      </article>
+      
+      <!--BAI VIET MA SO 003-->
+
+      <article class="post">
+        <h2 class="post-title">Tài liệu & Bài tập Sinh học 11 - BÀI 20: SINH TRƯỞNG VÀ PHÁT TRIỂN Ở THỰC VẬT</h2>
+        <p class="post-meta">Cập nhật: 04/05/2025 | Mức độ: Cơ bản đến nâng cao</p>
+      
+        <div class="post-content">
+          <p>Chào các bạn! Dưới đây là bộ tài liệu PDF và bài tập online giúp bạn ôn luyện kiến thức về "BÀI 20: SINH TRƯỞNG VÀ PHÁT TRIỂN Ở THỰC VẬT
+            Phần I. CÂU TRẮC NGHIỆM NHIỀU LỰA CHỌN
+            " trong chương trình Sinh học 11. Bạn có thể tải về hoặc quét mã QR để truy cập nhanh trên điện thoại.</p>
+      
+          <h3>📘 1. Tài liệu lý thuyết</h3>
+          <ul>
+            <li><a href="https://drive.google.com/file/d/1VmX7LXRcpp64OvuogQ3RIh01TbZwNxEZ/view?usp=sharing" target="_blank">Tải tài liệu PDF: B18,20,21 (đã có)</a></li>
+            <li><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/tai-lieu-te-bao.pdf&size=120x120" alt="QR Tài liệu PDF"></li>
+          </ul>
+      
+          <h3>📝 2. Bài tập trắc nghiệm</h3>
+          <p>Thực hành ngay với 18 câu hỏi trắc nghiệm online để kiểm tra mức độ hiểu bài:</p>
+          <ul>
+            <li><a href="https://azota.vn/de-thi/i6zfrl" target="_blank">Làm bài tại đây (đã có bài tập)</a></li>
+            <li><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/trac-nghiem-te-bao&size=120x120" alt="QR Bài tập trắc nghiệm"></li>
+          </ul>
+      
+          <h3>📊 3. Kết quả và gợi ý giải</h3>
+          <ul>
+            <li><a href="https://example.com/dap-an-te-bao" target="_blank">Xem đáp án & giải thích chi tiết (chưa update)</a></li>
+            <li><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/dap-an-te-bao&size=120x120" alt="QR Đáp án giải thích"></li>
+          </ul>
+        </div>
+      
+        <div class="share-buttons">
+          <p>Chia sẻ bài viết:</p>
+          <a href="#" class="btn-share"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="btn-share"><i class="fab fa-twitter"></i></a>
+        </div>
+      </article>
+
+      <!--BAI VIET MA SO 005-->
+
+      <article class="post">
+        <h2 class="post-title">Tài liệu & Bài tập Sinh học 11 - BÀI 21: SINH TRƯỞNG VÀ PHÁT TRIỂN Ở ĐỘNG VẬT</h2>
+        <p class="post-meta">Cập nhật: 04/05/2025 | Mức độ: Cơ bản đến nâng cao</p>
+      
+        <div class="post-content">
+          <p>Chào các bạn! Dưới đây là bộ tài liệu PDF và bài tập online giúp bạn ôn luyện kiến thức về "BÀI 21: SINH TRƯỞNG VÀ PHÁT TRIỂN Ở ĐỘNG VẬT
+            Phần I. CÂU TRẮC NGHIỆM NHIỀU LỰA CHỌN
+            " trong chương trình Sinh học 11. Bạn có thể tải về hoặc quét mã QR để truy cập nhanh trên điện thoại.</p>
+      
+          <h3>📘 1. Tài liệu lý thuyết</h3>
+          <ul>
+            <li><a href="https://drive.google.com/file/d/1VmX7LXRcpp64OvuogQ3RIh01TbZwNxEZ/view?usp=sharing" target="_blank">Tải tài liệu PDF: B18,20,21 (đã có)</a></li>
+            <li><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/tai-lieu-te-bao.pdf&size=120x120" alt="QR Tài liệu PDF"></li>
+          </ul>
+      
+          <h3>📝 2. Bài tập trắc nghiệm</h3>
+          <p>Thực hành ngay với 66 câu hỏi trắc nghiệm online để kiểm tra mức độ hiểu bài, vận dụng nân cao:</p>
+          <ul>
+            <li><a href="https://azota.vn/de-thi/fgi34t" target="_blank">Làm bài tại đây (đã có bài tập)</a></li>
+            <li><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/trac-nghiem-te-bao&size=120x120" alt="QR Bài tập trắc nghiệm"></li>
+          </ul>
+      
+          <h3>📊 3. Kết quả và gợi ý giải</h3>
+          <ul>
+            <li><a href="https://example.com/dap-an-te-bao" target="_blank">Xem đáp án & giải thích chi tiết (chưa update)</a></li>
+            <li><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/dap-an-te-bao&size=120x120" alt="QR Đáp án giải thích"></li>
+          </ul>
+        </div>
+      
+        <div class="share-buttons">
+          <p>Chia sẻ bài viết:</p>
+          <a href="#" class="btn-share"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="btn-share"><i class="fab fa-twitter"></i></a>
+        </div>
+      </article>
+
+    
+  </main>
+  
+  
+  
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 BangBanhBao Blog.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('show');
+    }
+  </script>
+
+</body>
+</html>
