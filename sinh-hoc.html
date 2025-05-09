@@ -64,7 +64,7 @@
     header h1 {
       font-size: 1.2rem;
       margin: 0;
-      color: blue;
+      color: #111184;
     }
 
     nav {
@@ -86,7 +86,7 @@
     }
 
     nav ul li a {
-      color: blue;
+      color: #111184;
       text-decoration: none;
       font-size: 0.95rem;
       padding: 6px 10px;
@@ -128,7 +128,7 @@
       cursor: pointer;
       background: none;
       border: none;
-      color: blue;
+      color: #111184;
     }
 
     .mobile-menu {
@@ -150,7 +150,7 @@
 
     .mobile-menu a {
       font-size: 1.2rem;
-      color: blue;
+      color: #111184;
       text-decoration: none;
     }
 
@@ -162,7 +162,7 @@
       cursor: pointer;
       background: none;
       border: none;
-      color: blue;
+      color: #111184;
     }
 
     main {
@@ -306,13 +306,43 @@
         display: flex;
       }
     }
+  /*Tóm gọn nội dung và có phim tắt ở bài viếtviết*/
+    .post-content.collapsed {
+    max-height: 230px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .toggle-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #111184;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  /*Css icon mới*/
+  .badge-new {
+    display: inline-block;
+    background-color: #ff3b3f; /* Màu đỏ nổi bật */
+    color: white;
+    font-size: 0.7em;
+    font-weight: bold;
+    padding: 2px 6px;
+    margin-right: 8px;
+    border-radius: 4px;
+    vertical-align: middle;
+  }
   </style>
 </head>
 <body>
 
   <header>
     <div class="container">
-      <h1>BangBanhBao</h1>
+      <h1 style="display: flex; align-items: center; justify-content: center;"><img src="img/Logo_BangBanhBao_modified-header.png" style="height: 23px; width: auto; margin-top: 0px";></h1>
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
       <nav>
         <ul>
@@ -358,6 +388,8 @@
     <center><p class="post-meta">---Bài viết được ghim---</p></center>
 
     <!--BAI VIET MA SO 004-->
+  
+  <!--
     <article class="post">
         <h2 class="post-title">Vì sao nên học tốt môn Sinh học? Kiến thức cần nắm vững ở lớp 10, 11, 12 để thi tốt nghiệp</h2>
         <p class="post-meta">Cập nhật: 04/05/2025 | Chủ đề: Định hướng học tập môn Sinh học</p>
@@ -411,8 +443,69 @@
         <a href="#" class="btn-share"><i class="fab fa-twitter"></i></a>
         </div>
     </article>
+  -->
+
+    <article class="post">
+      <h2 class="post-title">Vì sao nên học tốt môn Sinh học? Kiến thức cần nắm vững ở lớp 10, 11, 12 để thi tốt nghiệp</h2>
+      <p class="post-meta">Cập nhật: 04/05/2025 | Chủ đề: Định hướng học tập môn Sinh học</p>
+    
+      <div class="post-content collapsed" id="postContent">
+        <p>Sinh học là một trong những môn học quan trọng trong chương trình THPT, không chỉ giúp học sinh hiểu về thế giới sống mà còn là môn thi thuộc tổ hợp KHTN (Khoa học Tự nhiên) trong kỳ thi tốt nghiệp THPT. Dưới đây là những lý do bạn nên học tốt môn Sinh học và các nội dung trọng tâm theo từng lớp học.</p>
+    
+        <h3>🔍 Vì sao nên học tốt môn Sinh học?</h3>
+        <ul>
+            <li>👉 Hiểu rõ cơ thể người, cách các hệ cơ quan hoạt động và giữ gìn sức khỏe.</li>
+            <li>👉 Là nền tảng cho các ngành Y - Dược - Sinh học phân tử, Môi trường, Công nghệ Sinh học.</li>
+            <li>👉 Tăng khả năng tư duy logic, khả năng quan sát và phân tích dữ liệu.</li>
+            <li>👉 Là một trong ba môn xét tuyển khối B00 (Toán - Hóa - Sinh), mở rộng cơ hội đại học.</li>
+        </ul>
+    
+        <h3>📘 Kiến thức trọng tâm cần nắm ở các lớp:</h3>
+        <h4>🔹 Lớp 10 - Tế bào và sự sống</h4>
+        <ul>
+            <li>Các thành phần cấu tạo nên tế bào: màng sinh chất, ti thể, lưới nội chất...</li>
+            <li>Quá trình trao đổi chất và năng lượng (hô hấp tế bào, quang hợp).</li>
+            <li>Di truyền học cơ bản: ADN, ARN, cơ chế nhân đôi, phiên mã, dịch mã.</li>
+        </ul>
+    
+        <h4>🔹 Lớp 11 - Sinh lý học thực vật & động vật</h4>
+        <ul>
+            <li>Chức năng các cơ quan thực vật: rễ, lá, thân, quá trình quang hợp, thoát hơi nước.</li>
+            <li>Chức năng hệ thần kinh, nội tiết, tuần hoàn, tiêu hóa ở động vật và con người.</li>
+            <li>Các phản ứng cảm ứng và vận động ở sinh vật sống.</li>
+        </ul>
+    
+        <h4>🔹 Lớp 12 - Di truyền học & Tiến hóa</h4>
+        <ul>
+            <li>Các quy luật di truyền Mendel, tương tác gen, di truyền liên kết.</li>
+            <li>Biến dị, đột biến gen – nhiễm sắc thể, ứng dụng di truyền học trong chọn giống.</li>
+            <li>Tiến hóa, chọn lọc tự nhiên và nguồn gốc loài người.</li>
+        </ul>
+    
+        <h3>🎯 Lời khuyên:</h3>
+        <ul>
+            <li>✅ Luôn ghi chú và vẽ sơ đồ tư duy để dễ nhớ.</li>
+            <li>✅ Học lý thuyết kết hợp luyện tập trắc nghiệm thường xuyên.</li>
+            <li>✅ Dùng flashcards hoặc app học online để ôn tập hiệu quả hơn.</li>
+        </ul>
+    
+        <p>Hãy bắt đầu học Sinh học một cách nghiêm túc từ lớp 10 để xây nền vững chắc cho lớp 12 và đạt điểm cao trong kỳ thi tốt nghiệp và tuyển sinh đại học!</p>
+        
+      </div>
+    
+      <button class="toggle-btn" onclick="toggleContent()">Xem thêm</button>
+    
+      <div class="share-buttons">
+        <p>Chia sẻ bài viết:</p>
+        <a href="#" class="btn-share"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="btn-share"><i class="fab fa-twitter"></i></a>
+      </div>
+    </article>
+
+
+
   
-    <!--BAI VIET MA SO 001-->
+    <!--BAI VIET MA SO 0011-->
 
     <article class="post">
         <h2 class="post-title">TÀI LIỆU TỔNG HỢP MÔN SINH HỌC LỚP 11 </h2>
@@ -432,31 +525,33 @@
         </div>
       </article>
       <center><p class="post-meta">---Bài viết gần đây---</p></center>
-      <!--BAI VIET MA SO 002-->
+
+      <!--BAI VIET MA SO 002 đã sữa ngày 09/05/2025 -->
       <article class="post">
-        <h2 class="post-title">Tài liệu & Bài tập Sinh học 11 - BÀI 17: CẢM ỨNG Ở ĐỘNG VẬT</h2>
-        <p class="post-meta">Cập nhật: 04/05/2025 | Mức độ: Cơ bản đến nâng cao</p>
+        <h2 class="post-title"><span class="badge-new">Mới</span>Tài liệu & Bài tập Sinh học 11 - Tổng hợp</h2>
+        <p class="post-meta">Cập nhật: 09/05/2025 | Chủ đề: Các bài trắc nghiệm & trả lời ngắn sinh học 11</p>
       
         <div class="post-content">
-          <p>Chào các bạn! Dưới đây là bộ tài liệu PDF và bài tập online giúp bạn ôn luyện kiến thức về "BÀI 17: CẢM ỨNG Ở ĐỘNG VẬT" trong chương trình Sinh học 11. Bạn có thể tải về hoặc quét mã QR để truy cập nhanh trên điện thoại.</p>
+          <p>Bài viết này sẽ gửi cho các bạn các Tài liệu và bài tập để ôn tập sinh học 11, các kiến thức tại trường THPT Thống Linh và các kiến thức của cô Trương Thị Tuyết Phượng bộ môn sinh học thuộc nhà trường.</p>
       
-          <h3>📘 1. Tài liệu lý thuyết</h3>
+          <h3>📘 1. Tài liệu lý thuyết - bài tập</h3>
           <ul>
             <li><a href="https://drive.google.com/file/d/1VmX7LXRcpp64OvuogQ3RIh01TbZwNxEZ/view?usp=sharing" target="_blank">Tải tài liệu PDF: B18,20,21 (đã có)</a></li>
-            <li><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/tai-lieu-te-bao.pdf&size=120x120" alt="QR Tài liệu PDF"></li>
+            
           </ul>
       
           <h3>📝 2. Bài tập trắc nghiệm</h3>
-          <p>Thực hành ngay với 21 câu hỏi trắc nghiệm online để kiểm tra mức độ hiểu bài:</p>
+          <p>Danh sách các bài tập trắc nghiệm trực tuyến qua Azota:</p>
           <ul>
-            <li><a href="https://azota.vn/de-thi/xj5rsz" target="_blank">Làm bài tại đây (đã có bài tập)</a></li>
-            <li><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/trac-nghiem-te-bao&size=120x120" alt="QR Bài tập trắc nghiệm"></li>
+            <li><a href="https://azota.vn/de-thi/xj5rsz" target="_blank">BÀI 17: CẢM ỨNG Ở ĐỘNG VẬT (đã có bài tập)</a></li>
+            <li><a href="https://azota.vn/de-thi/i6zfrl" target="_blank">BÀI 20: SINH TRƯỞNG VÀ PHÁT TRIỂN Ở THỰC VẬT (đã có bài tập)</a></li>
+            <li><a href="https://azota.vn/de-thi/fgi34t" target="_blank">BÀI 21: SINH TRƯỞNG VÀ PHÁT TRIỂN Ở ĐỘNG VẬT (đã có bài tập)</a></li>
+            <li><a href="https://azota.vn/de-thi/plh95u" target="_blank">BÀI 23. KHÁI QUÁT VỀ SINH SẢN Ở SINH VẬT (đã có bài tập)</a></li>
           </ul>
       
           <h3>📊 3. Kết quả và gợi ý giải</h3>
           <ul>
             <li><a href="https://example.com/dap-an-te-bao" target="_blank">Xem đáp án & giải thích chi tiết (chưa update)</a></li>
-            <li><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/dap-an-te-bao&size=120x120" alt="QR Đáp án giải thích"></li>
           </ul>
         </div>
       
@@ -467,81 +562,7 @@
         </div>
       </article>
       
-      <!--BAI VIET MA SO 003-->
-
-      <article class="post">
-        <h2 class="post-title">Tài liệu & Bài tập Sinh học 11 - BÀI 20: SINH TRƯỞNG VÀ PHÁT TRIỂN Ở THỰC VẬT</h2>
-        <p class="post-meta">Cập nhật: 04/05/2025 | Mức độ: Cơ bản đến nâng cao</p>
       
-        <div class="post-content">
-          <p>Chào các bạn! Dưới đây là bộ tài liệu PDF và bài tập online giúp bạn ôn luyện kiến thức về "BÀI 20: SINH TRƯỞNG VÀ PHÁT TRIỂN Ở THỰC VẬT
-            Phần I. CÂU TRẮC NGHIỆM NHIỀU LỰA CHỌN
-            " trong chương trình Sinh học 11. Bạn có thể tải về hoặc quét mã QR để truy cập nhanh trên điện thoại.</p>
-      
-          <h3>📘 1. Tài liệu lý thuyết</h3>
-          <ul>
-            <li><a href="https://drive.google.com/file/d/1VmX7LXRcpp64OvuogQ3RIh01TbZwNxEZ/view?usp=sharing" target="_blank">Tải tài liệu PDF: B18,20,21 (đã có)</a></li>
-            <li><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/tai-lieu-te-bao.pdf&size=120x120" alt="QR Tài liệu PDF"></li>
-          </ul>
-      
-          <h3>📝 2. Bài tập trắc nghiệm</h3>
-          <p>Thực hành ngay với 18 câu hỏi trắc nghiệm online để kiểm tra mức độ hiểu bài:</p>
-          <ul>
-            <li><a href="https://azota.vn/de-thi/i6zfrl" target="_blank">Làm bài tại đây (đã có bài tập)</a></li>
-            <li><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/trac-nghiem-te-bao&size=120x120" alt="QR Bài tập trắc nghiệm"></li>
-          </ul>
-      
-          <h3>📊 3. Kết quả và gợi ý giải</h3>
-          <ul>
-            <li><a href="https://example.com/dap-an-te-bao" target="_blank">Xem đáp án & giải thích chi tiết (chưa update)</a></li>
-            <li><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/dap-an-te-bao&size=120x120" alt="QR Đáp án giải thích"></li>
-          </ul>
-        </div>
-      
-        <div class="share-buttons">
-          <p>Chia sẻ bài viết:</p>
-          <a href="#" class="btn-share"><i class="fab fa-facebook"></i></a>
-          <a href="#" class="btn-share"><i class="fab fa-twitter"></i></a>
-        </div>
-      </article>
-
-      <!--BAI VIET MA SO 005-->
-
-      <article class="post">
-        <h2 class="post-title">Tài liệu & Bài tập Sinh học 11 - BÀI 21: SINH TRƯỞNG VÀ PHÁT TRIỂN Ở ĐỘNG VẬT</h2>
-        <p class="post-meta">Cập nhật: 04/05/2025 | Mức độ: Cơ bản đến nâng cao</p>
-      
-        <div class="post-content">
-          <p>Chào các bạn! Dưới đây là bộ tài liệu PDF và bài tập online giúp bạn ôn luyện kiến thức về "BÀI 21: SINH TRƯỞNG VÀ PHÁT TRIỂN Ở ĐỘNG VẬT
-            Phần I. CÂU TRẮC NGHIỆM NHIỀU LỰA CHỌN
-            " trong chương trình Sinh học 11. Bạn có thể tải về hoặc quét mã QR để truy cập nhanh trên điện thoại.</p>
-      
-          <h3>📘 1. Tài liệu lý thuyết</h3>
-          <ul>
-            <li><a href="https://drive.google.com/file/d/1VmX7LXRcpp64OvuogQ3RIh01TbZwNxEZ/view?usp=sharing" target="_blank">Tải tài liệu PDF: B18,20,21 (đã có)</a></li>
-            <li><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/tai-lieu-te-bao.pdf&size=120x120" alt="QR Tài liệu PDF"></li>
-          </ul>
-      
-          <h3>📝 2. Bài tập trắc nghiệm</h3>
-          <p>Thực hành ngay với 66 câu hỏi trắc nghiệm online để kiểm tra mức độ hiểu bài, vận dụng nân cao:</p>
-          <ul>
-            <li><a href="https://azota.vn/de-thi/fgi34t" target="_blank">Làm bài tại đây (đã có bài tập)</a></li>
-            <li><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/trac-nghiem-te-bao&size=120x120" alt="QR Bài tập trắc nghiệm"></li>
-          </ul>
-      
-          <h3>📊 3. Kết quả và gợi ý giải</h3>
-          <ul>
-            <li><a href="https://example.com/dap-an-te-bao" target="_blank">Xem đáp án & giải thích chi tiết (chưa update)</a></li>
-            <li><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com/dap-an-te-bao&size=120x120" alt="QR Đáp án giải thích"></li>
-          </ul>
-        </div>
-      
-        <div class="share-buttons">
-          <p>Chia sẻ bài viết:</p>
-          <a href="#" class="btn-share"><i class="fab fa-facebook"></i></a>
-          <a href="#" class="btn-share"><i class="fab fa-twitter"></i></a>
-        </div>
-      </article>
 
     
   </main>
@@ -560,6 +581,20 @@
       const menu = document.getElementById('mobileMenu');
       menu.classList.toggle('show');
     }
+
+    function toggleContent() {
+    const content = document.getElementById("postContent");
+    const button = document.querySelector(".toggle-btn");
+
+    if (content.classList.contains("collapsed")) {
+      content.classList.remove("collapsed");
+      button.textContent = "Thu gọn";
+    } else {
+      content.classList.add("collapsed");
+      button.textContent = "Xem thêm";
+    }
+  }
+
   </script>
 
 </body>
