@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BangBanhBao | Sinh học </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Tài liệu Sinh học lớp 11" />
+    <meta property="og:description" content="Tổng hợp tài liệu, mã QR, và bài tập trắc nghiệm lịch sử lớp 11" />
+    <meta property="og:image" content="https://tlclass.github.io/BangBanhBaoBlog/img/Anh ChiBi.jpg" />
+    <meta property="og:url" content="https://tlclass.github.io/BangBanhBaoBlog/lich-su.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="BangBanhBao Blog" />
+
+
+
+  
+  
+  <style>
+    :root {
+      --primary: white;
+      --bg-light: #f9fafb;
+      --bg-white: #fff;
+      --text-color: #333;
+      --shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: var(--primary);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.2rem;
+      margin: 0;
+      color: #111184;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      position: relative;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: #111184;
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 6px 10px;
+      border-radius: 4px;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: rgba(0, 0, 255, 0.1);
+    }
+
+    /* Dropdown styles */
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background: var(--bg-white);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+      min-width: 180px;
+      flex-direction: column;
+      z-index: 999;
+    }
+
+    nav ul li:hover > ul {
+      display: flex;
+    }
+
+    nav ul li ul li a {
+      padding: 10px 16px;
+      color: #333;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #111184;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      z-index: 2000;
+      padding: 40px 20px;
+      box-shadow: var(--shadow);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .mobile-menu a {
+      font-size: 1.2rem;
+      color: #111184;
+      text-decoration: none;
+    }
+
+    .mobile-menu .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #111184;
+    }
+
+    main {
+      padding: 40px 0;
+    }
+
+    .post {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+    }
+
+    .post-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    }
+
+    .post-meta {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 20px;
+    }
+
+    .post-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    }
+
+    .post-content h3 {
+    margin-top: 25px;
+    color: #005c3a;
+    }
+
+    .post-content ul {
+    padding-left: 20px;
+    }
+
+    .share-buttons {
+    margin-top: 30px;
+    }
+
+    .share-buttons p {
+    margin-bottom: 10px;
+    font-weight: bold;
+    }
+
+    .btn-share {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 1.4rem;
+    color: #333;
+    transition: color 0.3s ease;
+    }
+
+    .btn-share:hover {
+    color: green;
+    }
+
+
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--bg-white);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+    }
+
+    .card {
+    position: relative; /* Cần thiết để xác định vị trí tuyệt đối cho icon */
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    background-color: #fff;
+    }
+
+    .arrow-icon {
+    position: absolute;
+    bottom: 15px;  /* Cách từ đáy box 15px */
+    right: 15px;   /* Cách từ bên phải box 15px */
+    font-size: 30px; /* Kích thước lớn hơn một chút cho dễ nhìn */
+    color: #000;    /* Màu đen cho icon */
+    text-decoration: none; /* Xóa gạch chân */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    }
+
+    .arrow-icon:hover {
+    transform: translateX(5px);  /* Thêm hiệu ứng hover */
+    }
+
+    .arrow-icon i {
+    color: inherit;  /* Đảm bảo icon có màu đen */
+    }
+
+
+
+    footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .mobile-menu.show {
+        display: flex;
+      }
+    }
+  /*Tóm gọn nội dung và có phim tắt ở bài viếtviết*/
+    .post-content.collapsed {
+    max-height: 230px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .toggle-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #111184;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  /*Css icon mới*/
+  .badge-new {
+    display: inline-block;
+    background-color: #ff3b3f; /* Màu đỏ nổi bật */
+    color: white;
+    font-size: 0.7em;
+    font-weight: bold;
+    padding: 2px 6px;
+    margin-right: 8px;
+    border-radius: 4px;
+    vertical-align: middle;
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1 style="display: flex; align-items: center; justify-content: center;"><img src="img/Logo_BangBanhBao_modified-header.png" style="height: 23px; width: auto; margin-top: 0px";></h1>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li>
+            <a href="#">Danh mục ▾</a>
+            <ul>
+              <li><a href="#">Tin học</a></li>
+              <li><a href="#">Toán học</a></li>
+              <li><a href="#">Vật lí</a></li>
+              <li><a href="#">Hóa học</a></li>
+              <li><a href="sinh-hoc.html">Sinh học</a></li>
+              <li><a href="#">Lịch sử</a></li>
+            </ul>
+          </li>
+          <li><a href="bai-viet.html">Bài viết</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenu" class="mobile-menu">
+    <button class="close-btn" onclick="toggleMenu()">✕</button>
+    <a href="index.html">Trang chủ</a>
+    <a href="index.html">Danh mục</a>
+    <a href="bai-viet.html">Bài viết</a>
+    <a href="#">Liên hệ</a>
+  </div>
+
+  <main class="container">
+    <!--
+    <section class="intro">
+        <img src="img/banner-sinh-hoc-02.jpg" alt="" style="width: 100%; border-radius: 7px; margin-top: 10px;">    
+    </section>
+    -->
+
+    <section class="intro" style="margin-top: 20px;">
+      <h2>Lịch sử</h2>
+      <p>Khám phá các sự kiện, nhân vật, và mốc thời gian quan trọng trong lịch sử Việt Nam và thế giới.</p>
+    </section>
+
+ 
+      <center><p class="post-meta">---Bài viết gần đây---</p></center>
+
+      <!--BAI VIET MA SO 002 đã sữa ngày 09/05/2025 -->
+      <article class="post">
+        <h2 class="post-title"><span class="badge-new">Mới</span>Tài liệu & Bài tập Lịch sử 11 - Tổng hợp</h2>
+        <p class="post-meta">Cập nhật: 12/05/2025 | Chủ đề: Các bài trắc nghiệm & trả lời ngắn lịch sử 11</p>
+      
+        <div class="post-content">
+          <p>Bài viết này sẽ gửi cho các bạn các Tài liệu và bài tập để ôn tập lịch sử 11.</p>
+      
+          <h3>📘 1. Tài liệu lý thuyết - bài tập</h3>
+          <ul>
+            <li><a href="#" target="_blank">Tải tài liệu PDF: (chưa có)</a></li>
+            
+          </ul>
+      
+          <h3>📝 2. Bài tập trắc nghiệm</h3>
+          <p>Danh sách các bài tập trắc nghiệm trực tuyến qua Azota:</p>
+          <ul>
+            <li><a href="https://azota.vn/de-thi/doiz8v" target="_blank">Lịch Sử 11 Cánh diều - Bài 8: Một số cuộc khởi nghĩa và chiến tranh giải phóng trong lịch sử Việt Nam (từ thế kỉ III TCN đến cuối thế kỉ XIX) (đã có bài tập)</a></li>
+            <li><a href="https://azota.vn/de-thi/xfcqvm" target="_blank">Lịch Sử 11 Cánh diều - Bài 10: Cuộc cải cách của Lê Thánh Tông (thế kỉ XV) (đã có bài tập)</a></li>
+            <li><a href="https://azota.vn/de-thi/c8hy8k" target="_blank">Lịch Sử 11 Cánh diều - Bài 11: Cuộc cải cách của Minh Mạng (nửa đầu thế kỉ XIX) (đã có bài tập)</a></li>
+          </ul>
+      
+          <h3>📊 3. Kết quả và gợi ý giải</h3>
+          <ul>
+            <li><a href="https://example.com/dap-an-te-bao" target="_blank">Xem đáp án & giải thích chi tiết (chưa update)</a></li>
+          </ul>
+        </div>
+      
+        <div class="share-buttons">
+          <p>Chia sẻ bài viết:</p>
+          <a href="#" class="btn-share"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="btn-share"><i class="fab fa-twitter"></i></a>
+        </div>
+      </article>
+      
+      
+
+    
+  </main>
+  
+  
+  
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 BangBanhBao Blog.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('show');
+    }
+
+    function toggleContent() {
+    const content = document.getElementById("postContent");
+    const button = document.querySelector(".toggle-btn");
+
+    if (content.classList.contains("collapsed")) {
+      content.classList.remove("collapsed");
+      button.textContent = "Thu gọn";
+    } else {
+      content.classList.add("collapsed");
+      button.textContent = "Xem thêm";
+    }
+  }
+
+  </script>
+
+</body>
+</html>
